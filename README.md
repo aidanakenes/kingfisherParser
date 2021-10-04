@@ -10,7 +10,7 @@ __docker-compose.yml__:<br>
         - db: PostgreSQL
 ```
 
-Build, (re)create, start, and attache to containers for a service.
+Build, (re)create, start, and attach to containers for a service.
 ```
 docker-compose up -d --build
 ```
