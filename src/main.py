@@ -20,11 +20,11 @@ def get():
         _items = KingfishParser().get_items(_links)
         if _items:
             my_db = DB()
-            for k, v in _items.items():
-                for v2 in v:
-                    for k3, v3 in v2.items():
-                        for v4 in v3:
-                            my_db.insert_item(item=v4)
+            for _, subcategories in _items.items():
+                for subcategory in subcategories:
+                    for _, items in subcategory.items():
+                        for item in items:
+                            my_db.insert_item(item=item)
     except ApplicationError as e:
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
